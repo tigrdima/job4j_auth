@@ -16,5 +16,4 @@ public class Job4jAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(Job4jAuthApplication.class, args);
     }
-
 }

@@ -6,4 +6,5 @@ import ru.job4j.model.Employee;
 
 @ThreadSafe
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
+
 }
