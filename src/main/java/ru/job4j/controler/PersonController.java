@@ -2,12 +2,9 @@ package ru.job4j.controler;
 
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.model.Person;
-import ru.job4j.pepository.PersonRepository;
 import ru.job4j.service.PersonService;
 
 import java.util.List;
@@ -28,7 +25,7 @@ public class PersonController {
         return personService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/")
     public ResponseEntity<Person> findById(@PathVariable int id) {
        Optional<Person> person = personService.findById(id);
        return new ResponseEntity<>(person.orElse(new
@@ -49,7 +46,7 @@ public class PersonController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/")
     public ResponseEntity<Void> delete(@PathVariable int id) {
         Person person = new Person();
         person.setId(id);
